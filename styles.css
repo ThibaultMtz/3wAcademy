@@ -75,5 +75,4 @@ h1 {
     font-weight: bold;
     margin: 20px;
     text-align: center;
-    opacity: 1; /* Removed the opacity property */
-}
+    opacity: 1; 
