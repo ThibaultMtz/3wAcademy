@@ -17,6 +17,7 @@
 document.getElementById("#inf").onclick = function() { E() };
 */
 let i = 0;
+// switch case of turns
 switch (id) {
     case "#3":
         B3();
@@ -34,6 +35,7 @@ switch (id) {
         E();
         break;
 };
+//best of 3
 function B3(){
     Match();
     for (i = 0; i < 3; i++) {
@@ -43,6 +45,7 @@ function B3(){
         reMatchN();
     }; 
 };
+//best of 5
 function B5(){
     Match();
     for (i = 0;i > j; i++){
@@ -52,6 +55,7 @@ function B5(){
         reMatchN();
     }; 
 };
+// best of 7
 function B7(){
     Match();
     for (i = 0; i < 7; i++){
@@ -61,6 +65,7 @@ function B7(){
         reMatchN();
     }; 
 };
+//best of 9
 function B9(){
     Match();
     for (i = 0; i < 9; i++){
