@@ -7,8 +7,22 @@ body {
     padding: 20px;
 }
 
+.help {
+    float: left;
+    margin: 0 20px;
+}
+
+.help-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
 h1 {
     font-size: 24px;
+    margin: 10px 0;
 }
 
 .choices {
@@ -21,10 +35,45 @@ h1 {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+    border: 2px solid #333;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
 }
 
-.result {
-    font-size: 20px;
+.choice:hover {
+    background-color: #ddd;
+}
+
+.user-choice, .computer-choice {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.user-choice h2, .computer-choice h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.user-choice img, .computer-choice img {
+    display: block;
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+/* Style for "You Win" message */
+.game-result.win {
+    color: green;
+}
+
+/* Style for "Computer Wins" message */
+.game-result.lose {
+    color: red;
+}
+
+.game-result {
+    font-size: 24px;
     font-weight: bold;
     margin: 20px;
+    text-align: center;
+    opacity: 1; /* Removed the opacity property */
 }
