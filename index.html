@@ -5,15 +5,28 @@
 </head>
 <body>
     <div class="container">
+        <div class="container">
+            <div class="help">
+                <button class="help-button" id="help-button">Help</button>
+            </div>
         <h1>Rock, Paper, Scissors</h1>
+        <p>Make your choice!</p>
         <div id="game">
             <div class="choices">
                 <button class="choice" id="rock">Rock</button>
                 <button class="choice" id="paper">Paper</button>
                 <button class="choice" id="scissors">Scissors</button>
             </div>
+            <div class="user-choice">
+                <h2>Your Choice</h2>
+                <img src="rock.png" alt="Your Choice" id="user-choice-img">
+            </div>
+            <div class="computer-choice">
+                <h2>Computer's Choice</h2>
+                <img src="paper.png" alt="Computer's Choice" id="computer-choice-img">
+            </div>
             <div class="result">
-                <p>Make your choice!</p>
+                <p class="game-result"> </p>
             </div>
         </div>
     </div>
