@@ -1,4 +1,5 @@
-//function Match(){
+function Match(){
+    //
     //do{
         let UserScore = 0;
         let CpuScore = 0;
@@ -32,4 +33,4 @@
         console.log('Player : '+ UserScore +' / Rival : '+ CpuScore +'.');  
     //}
     //while(ContMat == 'True');
-//};
+};
