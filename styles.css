@@ -1,10 +1,16 @@
+/* Existing CSS */
+
 body {
     font-family: Arial, sans-serif;
+    margin: 10px;
+   
 }
 
 .container {
     text-align: center;
     padding: 20px;
+ 
+  
 }
 
 .help {
@@ -36,7 +42,7 @@ h1 {
     font-size: 18px;
     cursor: pointer;
     border: 2px solid #333;
-    background-color:  #0000F5;
+    background-color: #0000F5;
     transition: background-color 0.3s;
 }
 
@@ -44,17 +50,20 @@ h1 {
     background-color: #ddd;
 }
 
-.user-choice, .computer-choice {
+.user-choice,
+.computer-choice {
     display: inline-block;
     margin: 0 10px;
 }
 
-.user-choice h2, .computer-choice h2 {
+.user-choice h2,
+.computer-choice h2 {
     text-align: center;
     font-size: 18px;
 }
 
-.user-choice img, .computer-choice img {
+.user-choice img,
+.computer-choice img {
     display: block;
     max-width: 100px;
     margin: 0 auto;
@@ -86,39 +95,48 @@ h1 {
     border: 1px solid #ddd;
 }
 
-.rules ul, .rules ol {
+.rules ul,
+.rules ol {
     padding-left: 20px;
 }
+
 button {
     background-color: #0000FF;
     color: white;
     border: 0;
-    padding : .5em 1em;
+    padding: 0.5em 1em;
     font-size: 1em;
     border-radius: 1em;
     cursor: pointer;
 }
 
 button:hover {
-    background: #35d0ba
+    background: #35d0ba;
 }
 
 nav {
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: none;
 }
 
 ul {
-    list-style: none; padding: 0; z-index: 2;
+    list-style: none;
+    padding: 0;
+    z-index: 2;
 }
 
 ul li {
     text-align: center;
-    animation: .3s print;
-    text-decoration: none; font-size: 3em;
+    animation: 0.3s print;
+    text-decoration: none;
+    font-size: 3em;
     text-transform: uppercase;
-    font-family: Arial; font-weight: bold;
+    font-family: Arial;
+    font-weight: bold;
     color: white;
 }
 
@@ -134,19 +152,25 @@ ul li:hover {
 
 .backdrop {
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    background: rgba(0, 0, 0, .9);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
     cursor: pointer;
-    animation: fade .1s;
+    animation: fade 0.1s;
     z-index: 1;
 }
 
 @keyframes print {
     from {
-        margin-top: -50px; opacity: 0;
+        margin-top: -50px;
+        opacity: 0;
     }
+
     to {
-        margin-top: 0; opacity: 1;
+        margin-top: 0;
+        opacity: 1;
     }
 }
 
@@ -170,4 +194,9 @@ ul li:hover {
 
 #quitterBouton {
     cursor: pointer;
+}
+#win-count {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-align: center; 
 }
