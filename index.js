@@ -1,4 +1,14 @@
+const helpButton = document.getElementById('help-button');
+const rulesDiv = document.getElementById('rules');
 
+helpButton.addEventListener('click', function() {
+    // Toggle the display of the rules div
+    if (rulesDiv.style.display === "none") {
+        rulesDiv.style.display = "block";
+    } else {
+        rulesDiv.style.display = "none";
+    }
+});
 
 const choices = ["rock", "paper", "scissors"];
 
@@ -57,20 +67,4 @@ buttons.forEach(button => {
     button.addEventListener('click', function() {
         playGame(this.id);
     });
-});
-const helpButton = document.getElementById('help-button');
-
-helpButton.addEventListener('click', function() {
-    const rules = "Welcome to the Rock, Paper, Scissors game! Here are the rules:\n\n" +
-        "- Rock beats Scissors.\n" +
-        "- Paper beats Rock.\n" +
-        "- Scissors beats Paper.\n" +
-        "- If both you and the computer choose the same, it's a tie!\n\n" +
-        "How to play:\n\n" +
-        "1. Click one of the buttons to choose your move.\n" +
-        "2. The computer will randomly choose its move.\n" +
-        "3. See the result: You Win, Computer Wins, or It's a tie!\n\n" +
-        "Have fun and enjoy the game!";
-    
-    alert(rules);
 });
