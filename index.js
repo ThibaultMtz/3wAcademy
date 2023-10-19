@@ -1,12 +1,16 @@
+let UserScore = 0;
+let CpuScore = 0;
+let rounds = 0; 
+
 const helpButton = document.getElementById('help-button');
 const rulesDiv = document.getElementById('rules');
 
 helpButton.addEventListener('click', function() {
     // Toggle the display of the rules div
-    if (rulesDiv.style.display === "none") {
-        rulesDiv.style.display = "block";
+    if (rulesDiv.style.display === 'none') {
+        rulesDiv.style.display = 'block';
     } else {
-        rulesDiv.style.display = "none";
+        rulesDiv.style.display = 'none';
     }
 });
 
@@ -49,16 +53,27 @@ function playGame(playerChoice) {
     if (playerChoice === computer) {
         resultElement.innerText = "It's a tie!";
     } else if (
-        (playerChoice === "rock" && computer === "scissors") ||
-        (playerChoice === "paper" && computer === "rock") ||
-        (playerChoice === "scissors" && computer === "paper")
+        (playerChoice === 'rock' && computer === 'scissors') ||
+        (playerChoice === 'paper' && computer === 'rock') ||
+        (playerChoice === 'scissors' && computer === 'paper')
     ) {
-        resultElement.innerText = "You Win!";
+        resultElement.innerText = 'You Win!';
+        UserScore++;
+        document.getElementById('player-wins').innerText = UserScore; // Update user's score
         resultElement.className = 'game-result win'; // Set the class to 'win'
     } else {
-        resultElement.innerText = "Computer Wins!";
+        resultElement.innerText = 'Computer Wins!';
+        CpuScore++;
+        document.getElementById('computer-wins').innerText = CpuScore; // Update computer's score
         resultElement.className = 'game-result lose'; // Set the class to 'lose'
     }
+
+    rounds--;
+
+    if (rounds === 0) {
+        endGame();
+    }
+    console.log('Player: ' + UserScore + ' / Rival: ' + CpuScore + '.');
 }
 
 const buttons = document.querySelectorAll('.choice');
@@ -68,3 +83,5 @@ buttons.forEach(button => {
         playGame(this.id);
     });
 });
+
+console.log('Player: ' + UserScore + ' / Rival: ' + CpuScore + '.');
