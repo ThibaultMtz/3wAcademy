@@ -1,4 +1,4 @@
-et UserScore = 0;
+let UserScore = 0;
 let CpuScore = 0;
 let rounds = 0; 
 
