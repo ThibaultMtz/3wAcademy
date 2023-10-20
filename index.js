@@ -1,11 +1,11 @@
-let UserScore = 0;
-let CpuScore = 0;
-let rounds = 0; 
+let userScore = 0;
+let cpuScore = 0;
+let rounds = 5; // Number of rounds
 
 const helpButton = document.getElementById('help-button');
 const rulesDiv = document.getElementById('rules');
 
-helpButton.addEventListener('click', function() {
+helpButton.addEventListener('click', function () {
     // Toggle the display of the rules div
     if (rulesDiv.style.display === 'none') {
         rulesDiv.style.display = 'block';
@@ -58,13 +58,13 @@ function playGame(playerChoice) {
         (playerChoice === 'scissors' && computer === 'paper')
     ) {
         resultElement.innerText = 'You Win!';
-        UserScore++;
-        document.getElementById('player-wins').innerText = UserScore; // Update user's score
+        userScore++;
+        document.getElementById('player-wins').innerText = userScore; // Update user's score
         resultElement.className = 'game-result win'; // Set the class to 'win'
     } else {
         resultElement.innerText = 'Computer Wins!';
-        CpuScore++;
-        document.getElementById('computer-wins').innerText = CpuScore; // Update computer's score
+        cpuScore++;
+        document.getElementById('computer-wins').innerText = cpuScore; // Update computer's score
         resultElement.className = 'game-result lose'; // Set the class to 'lose'
     }
 
@@ -73,28 +73,49 @@ function playGame(playerChoice) {
     if (rounds === 0) {
         endGame();
     }
-    console.log('Player: ' + UserScore + ' / Rival: ' + CpuScore + '.');
+}
+
+function endGame() {
+    let gameResultMessage = "";
+    if (userScore > cpuScore) {
+        gameResultMessage = "You win!";
+    } else {
+        gameResultMessage = "Game over!";
+    }
+
+    setTimeout(function () {
+        if (confirm(gameResultMessage + " Do you want to continue the game?")) {
+            // User clicked "OK" (yes), so reset the scores and continue.
+            userScore = 0;
+            cpuScore = 0;
+            document.getElementById('player-wins').innerText = userScore;
+            document.getElementById('computer-wins').innerText = cpuScore;
+            rounds = 5;
+        } else {
+            // User clicked "Cancel" (no), so quit the game.
+            location.reload(); // Reload the page to start a new game.
+        }
+    }, 100); // Delay the alert for a better user experience.
 }
 
 const buttons = document.querySelectorAll('.choice');
 
 buttons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         playGame(this.id);
     });
 });
 
-console.log('Player: ' + UserScore + ' / Rival: ' + CpuScore + '.');
 const button = document.querySelector('button')
 const nav = document.querySelector('nav')
 const backdrop = document.querySelector('.backdrop')
 
-//ouvre le menu
+// Opens the menu
 button.addEventListener('click', () => {
     nav.classList.add('open')
 })
 
-//enleve le menu et revient sur la page de jeu 
+// Closes the menu and returns to the game page
 backdrop.addEventListener('click', () => {
     nav.classList.remove('open');
 })
@@ -107,12 +128,12 @@ continuer.addEventListener('click', () => {
     nav.classList.remove('open');
 })
 
-//rafraichit la page pour le joueur recommence son jeu 
+// Refreshes the page for the player to start a new game
 recommencer.addEventListener('click', () => {
     location.reload();
 })
 
 quitter.addEventListener('click', () => {
-    //insérer le lien de votre page pour rediriger à l'acceuil du jeu)
+    // Redirect to your desired page to quit the game
     location.href = 'https://google.com'; 
 })
